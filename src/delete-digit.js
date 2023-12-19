@@ -11,9 +11,23 @@ const { NotImplementedError } = require('../extensions/index.js');
  * For n = 152, the output should be 52
  *
  */
-function deleteDigit(/* n */) {
-  throw new NotImplementedError('Not implemented');
+function deleteDigit(n) {
+  // throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
+
+  const strNumber = n.toString(); // Convert the number to a string
+  let maxNumber = 0;
+
+  for (let i = 0; i < strNumber.length; i++) {
+    const currentNumber = parseInt(strNumber.slice(0, i) + strNumber.slice(i + 1));
+
+    if (currentNumber > maxNumber) {
+      maxNumber = currentNumber;
+    }
+  }
+
+  return maxNumber;
+
 }
 
 module.exports = {
