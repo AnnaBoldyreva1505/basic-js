@@ -17,11 +17,17 @@ function createDreamTeam(members) {
   // throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
 
+  if (!Array.isArray(members)) {
+    return false;
+  }
+
   const filteredMembers = members
     .filter(member => typeof member === 'string')
     .map(member => member.trim()[0].toUpperCase());
 
-     return filteredMembers.sort().join('');
+  const res = filteredMembers.sort().join('');
+     
+  return res;
 }
 
 module.exports = {
